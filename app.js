@@ -9,22 +9,20 @@ slides.forEach(function (slide, index){
 let counter = 0;
 nextBtn.addEventListener('click', function(){
     counter++;
-    if(counter > slides.length-1){
-        counter = 0;
-    }
-    carousel();
+        carousel();
 });
 prevBtn.addEventListener('click', function (){
     counter--;
-    if(counter < 0) {
-        counter = slides.length-1;
-    }
-    carousel();
+      carousel();
 });
-
+if(counter === 0) {
+    prevBtn.style.display = 'none';
+}
 function carousel() {
     // working with buttons
 if(counter < slides.length - 1) {
+    console.log(counter);
+    console.log(slides.length);
     nextBtn.style.display = "block";
     } else {
         nextBtn.style.display = 'none';
@@ -39,4 +37,3 @@ if(counter < slides.length - 1) {
     });
 }
 
-console.log(counter);
